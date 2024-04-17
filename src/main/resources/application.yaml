@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: conference-microservice
+  datasource:
+    url: jdbc:postgresql://localhost:5433/sbm?currentSchema=conf-svc
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        default_schema: conf-svc
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  flyway:
+    schemas: conf-svc
