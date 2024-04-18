@@ -1,4 +1,4 @@
-package net.karmak.conference.domain;
+package net.karmak.conference.domain.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -17,6 +17,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import net.karmak.conference.domain.TalkType;
 
 @Data
 @Entity

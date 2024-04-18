@@ -1,4 +1,4 @@
-package net.karmak.conference.dto;
+package net.karmak.conference.domain.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;

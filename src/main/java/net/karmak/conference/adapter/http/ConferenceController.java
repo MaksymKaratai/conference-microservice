@@ -1,9 +1,9 @@
-package net.karmak.conference.controller;
+package net.karmak.conference.adapter.http;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import net.karmak.conference.dto.ConferenceDto;
-import net.karmak.conference.dto.TalkDto;
+import net.karmak.conference.domain.dto.ConferenceDto;
+import net.karmak.conference.domain.dto.TalkDto;
 import net.karmak.conference.service.ConferenceService;
 import net.karmak.conference.service.TalkService;
 import org.springframework.data.domain.Page;

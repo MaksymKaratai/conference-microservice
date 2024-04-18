@@ -1,8 +1,8 @@
-package net.karmak.conference.validator;
+package net.karmak.conference.service.validator;
 
-import net.karmak.conference.domain.Conference;
-import net.karmak.conference.dto.TalkDto;
-import net.karmak.conference.exception.ValidationException;
+import net.karmak.conference.domain.entity.Conference;
+import net.karmak.conference.domain.dto.TalkDto;
+import net.karmak.conference.service.exception.ValidationException;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;

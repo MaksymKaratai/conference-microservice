@@ -1,4 +1,4 @@
-package net.karmak.conference.domain;
+package net.karmak.conference.domain.entity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

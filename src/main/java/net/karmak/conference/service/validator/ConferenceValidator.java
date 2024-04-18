@@ -1,9 +1,9 @@
-package net.karmak.conference.validator;
+package net.karmak.conference.service.validator;
 
 import lombok.RequiredArgsConstructor;
-import net.karmak.conference.dto.ConferenceDto;
-import net.karmak.conference.exception.ValidationException;
-import net.karmak.conference.repo.ConferenceRepository;
+import net.karmak.conference.domain.dto.ConferenceDto;
+import net.karmak.conference.service.exception.ValidationException;
+import net.karmak.conference.adapter.sql.ConferenceDao;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,12 +12,12 @@ import java.time.LocalDate;
 @Component
 @RequiredArgsConstructor
 public class ConferenceValidator {
-    private final ConferenceRepository conferenceRepository;
+    private final ConferenceDao conferenceDao;
 
     @Transactional(readOnly = true)
     public void validate(ConferenceDto dto) {
         validateDates(dto);
-        if (conferenceRepository.existsByName(dto.getName())) {
+        if (conferenceDao.existsByName(dto.getName())) {
             throw new ValidationException(409, "Name [" + dto.getName() + "] already in use");
         }
     }

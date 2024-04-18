@@ -1,6 +1,6 @@
-package net.karmak.conference.repo;
+package net.karmak.conference.adapter.sql;
 
-import net.karmak.conference.domain.Conference;
+import net.karmak.conference.domain.entity.Conference;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface ConferenceRepository extends JpaRepository<Conference, Long> {
+public interface ConferenceDao extends JpaRepository<Conference, Long> {
     boolean existsByName(String name);
 
     @EntityGraph(attributePaths = "talks")

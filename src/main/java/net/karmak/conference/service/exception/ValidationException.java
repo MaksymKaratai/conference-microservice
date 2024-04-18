@@ -1,4 +1,4 @@
-package net.karmak.conference.exception;
+package net.karmak.conference.service.exception;
 
 import lombok.Getter;
 import lombok.ToString;

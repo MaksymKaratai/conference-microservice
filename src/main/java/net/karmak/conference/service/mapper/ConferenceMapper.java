@@ -1,7 +1,7 @@
-package net.karmak.conference.mapper;
+package net.karmak.conference.service.mapper;
 
-import net.karmak.conference.domain.Conference;
-import net.karmak.conference.dto.ConferenceDto;
+import net.karmak.conference.domain.entity.Conference;
+import net.karmak.conference.domain.dto.ConferenceDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 
