@@ -5,6 +5,10 @@ spring:
     url: jdbc:postgresql://localhost:5433/sbm?currentSchema=conf-svc
     username: postgres
     password: postgres
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 10
+      pool-name: "db-con-pool"
   jpa:
     properties:
       hibernate:
@@ -12,6 +16,18 @@ spring:
     show-sql: true
     open-in-view: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: validate
   flyway:
     schemas: conf-svc
+  freemarker:
+    enabled: false
+
+server:
+  servlet:
+    jsp:
+      registered: false
+  tomcat:
+    max-connections: 20
+
+# Debugging info
+debug: false

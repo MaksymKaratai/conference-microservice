@@ -1,7 +1,7 @@
-CREATE SEQUENCE conference_seq START WITH 5 INCREMENT BY 1;
+CREATE SEQUENCE conference_seq START WITH 1 INCREMENT BY 1;
 
 CREATE TABLE conference (
-    id SERIAL PRIMARY KEY,
+    id BIGINT DEFAULT nextval('conference_seq') PRIMARY KEY,
     name VARCHAR(255) UNIQUE NOT NULL,
     topic VARCHAR(255) NOT NULL,
     start_date DATE NOT NULL,
@@ -9,15 +9,15 @@ CREATE TABLE conference (
     number_of_participants INT NOT NULL CHECK (number_of_participants > 100)
 );
 
-CREATE SEQUENCE talk_seq START WITH 15 INCREMENT BY 1;
+CREATE SEQUENCE talk_seq START WITH 1 INCREMENT BY 1;
 
 CREATE TABLE talk (
-    id SERIAL PRIMARY KEY,
+    id BIGINT DEFAULT nextval('talk_seq') PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     speaker_name VARCHAR(255) NOT NULL,
     talk_type VARCHAR(20) NOT NULL,
-    conference_id INT NOT NULL,
+    conference_id BIGINT NOT NULL,
     CONSTRAINT fk_conference_id FOREIGN KEY (conference_id) REFERENCES conference(id),
     CONSTRAINT uc_talk_title UNIQUE (title),
     CONSTRAINT chk_talk_type CHECK (talk_type IN ('REPORT', 'MASTER_CLASS', 'WORKSHOP'))
