@@ -18,4 +18,3 @@ public class GlobalControllerExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.valueOf(ex.getCode()));
     }
 }
-
